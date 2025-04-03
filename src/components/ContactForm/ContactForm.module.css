@@ -1,0 +1,27 @@
+.form {
+  border: 1px solid black;
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  padding: 20px;
+  margin-top: 15px;
+  width: 700px;
+
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.field-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.error {
+  color: red;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 4px;
+}
