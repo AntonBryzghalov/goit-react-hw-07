@@ -2,9 +2,8 @@ import { Field, Form, Formik, ErrorMessage } from "formik";
 import css from "./ContactForm.module.css";
 import * as yup from "yup";
 import { useId } from "react";
-import { nanoid } from "nanoid";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/operations";
 
 const SHORT_ERROR_MESSAGE = "Too short!";
 const LONG_ERROR_MESSAGE = "Too long!";
@@ -33,9 +32,8 @@ function ContactForm() {
 
   function handleSubmit(values, actions) {
     const newRecord = {
-      id: nanoid(),
       name: values.name,
-      number: values.number,
+      phoneNumber: values.number,
     };
 
     dispatch(addContact(newRecord));
