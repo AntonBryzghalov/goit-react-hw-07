@@ -3,7 +3,7 @@ import css from "./ContactForm.module.css";
 import * as yup from "yup";
 import { useId } from "react";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/operations";
+import { addContact } from "../../redux/contactsOps";
 
 const SHORT_ERROR_MESSAGE = "Too short!";
 const LONG_ERROR_MESSAGE = "Too long!";
@@ -33,7 +33,7 @@ function ContactForm() {
   function handleSubmit(values, actions) {
     const newRecord = {
       name: values.name,
-      phoneNumber: values.number,
+      number: values.number,
     };
 
     dispatch(addContact(newRecord));

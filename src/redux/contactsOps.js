@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-export const errorMessage =
+export const genericErrorMessage =
   "There was an error. Try to update page a bit later";
 
 const mockAPI = axios.create({
@@ -26,7 +26,7 @@ function generateThunk(name, requestFunc) {
       const response = await requestFunc(arg);
       return response.data;
     } catch (error) {
-      thunkAPI.rejectWithValue(error.message);
+      return thunkAPI.rejectWithValue(error);
     }
   });
 }
